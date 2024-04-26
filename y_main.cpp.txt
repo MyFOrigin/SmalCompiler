@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    int hours_worked;
+    float hourly_rate;
+};
+
+void calculateSalary(struct Employee employee) {
+    float salary = employee.hours_worked * employee.hourly_rate;
+    printf("Employee ID: %d\n", employee.id);
+    printf("Employee Name: %s\n", employee.name);
+    printf("Hours Worked: %d\n", employee.hours_worked);
+    printf("Hourly Rate: $%.2f\n", employee.hourly_rate);
+    printf("Salary: $%.2f\n\n", salary);
+}
+
+int main() {
+    struct Employee emp1 = {1, "John Doe", 40, 25.00};
+    struct Employee emp2 = {2, "Jane Smith", 35, 30.00};
+
+    calculateSalary(emp1);
+    calculateSalary(emp2);
+
+    return 0;
+}
